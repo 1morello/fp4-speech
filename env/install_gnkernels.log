@@ -1,0 +1,124 @@
+Using Python 3.12.3 environment at: /home/arnur/fp4-speech/.venv
+Resolved 1 package in 1ms
+   Building gn-kernels @ file:///home/arnur/fp4-speech/bench/gemm/gn-kernels
+  × Failed to build `gn-kernels @ file:///home/arnur/fp4-speech/bench/gemm/gn-kernels`
+  ├─▶ The build backend returned an error
+  ╰─▶ Call to `setuptools.build_meta.build_editable` failed (exit status: 1)
+
+      [stdout]
+      running editable_wheel
+      creating /home/arnur/.cache/uv/builds-v0/.tmpZHj7DE/.tmp-o0panx3i/gn_kernels.egg-info
+      writing
+      /home/arnur/.cache/uv/builds-v0/.tmpZHj7DE/.tmp-o0panx3i/gn_kernels.egg-info/PKG-INFO
+      writing dependency_links to
+      /home/arnur/.cache/uv/builds-v0/.tmpZHj7DE/.tmp-o0panx3i/gn_kernels.egg-info/dependency_links.txt
+      writing top-level names to
+      /home/arnur/.cache/uv/builds-v0/.tmpZHj7DE/.tmp-o0panx3i/gn_kernels.egg-info/top_level.txt
+      writing manifest file
+      '/home/arnur/.cache/uv/builds-v0/.tmpZHj7DE/.tmp-o0panx3i/gn_kernels.egg-info/SOURCES.txt'
+      reading manifest file
+      '/home/arnur/.cache/uv/builds-v0/.tmpZHj7DE/.tmp-o0panx3i/gn_kernels.egg-info/SOURCES.txt'
+      writing manifest file
+      '/home/arnur/.cache/uv/builds-v0/.tmpZHj7DE/.tmp-o0panx3i/gn_kernels.egg-info/SOURCES.txt'
+      creating
+      '/home/arnur/.cache/uv/builds-v0/.tmpZHj7DE/.tmp-o0panx3i/gn_kernels-0.0.1.dist-info'
+      creating
+      /home/arnur/.cache/uv/builds-v0/.tmpZHj7DE/.tmp-o0panx3i/gn_kernels-0.0.1.dist-info/WHEEL
+      running build_py
+      running build_ext
+
+      [stderr]
+      Traceback (most recent call last):
+        File "<string>", line 11, in <module>
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/build_meta.py",
+      line 472, in build_editable
+          return self._build_with_temp_dir(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/build_meta.py",
+      line 408, in _build_with_temp_dir
+          self.run_setup()
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/build_meta.py",
+      line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 40, in <module>
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/__init__.py",
+      line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/_distutils/core.py",
+      line 186, in setup
+          return run_commands(dist)
+                 ^^^^^^^^^^^^^^^^^^
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/_distutils/core.py",
+      line 202, in run_commands
+          dist.run_commands()
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/_distutils/dist.py",
+      line 1002, in run_commands
+          self.run_command(cmd)
+        File "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/dist.py",
+      line 1107, in run_command
+          super().run_command(command)
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/_distutils/dist.py",
+      line 1021, in run_command
+          cmd_obj.run()
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/command/editable_wheel.py",
+      line 140, in run
+          self._create_wheel_file(bdist_wheel)
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/command/editable_wheel.py",
+      line 350, in _create_wheel_file
+          files, mapping = self._run_build_commands(dist_name, unpacked, lib, tmp)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/command/editable_wheel.py",
+      line 273, in _run_build_commands
+          self._run_build_subcommands()
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/command/editable_wheel.py",
+      line 300, in _run_build_subcommands
+          self.run_command(name)
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/_distutils/cmd.py",
+      line 357, in run_command
+          self.distribution.run_command(command)
+        File "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/dist.py",
+      line 1107, in run_command
+          super().run_command(command)
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/_distutils/dist.py",
+      line 1021, in run_command
+          cmd_obj.run()
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/command/build_ext.py",
+      line 97, in run
+          _build_ext.run(self)
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py",
+      line 368, in run
+          self.build_extensions()
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py",
+      line 716, in build_extensions
+          _check_cuda_version(compiler_name, compiler_version)
+        File
+      "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py",
+      line 545, in _check_cuda_version
+          raise RuntimeError(CUDA_MISMATCH_MESSAGE, cuda_str_version, torch.version.cuda)
+      RuntimeError: ('The detected CUDA version (%s) mismatches the version that was used
+      to compilePyTorch (%s). Please make sure to use the same CUDA versions.', '12.0',
+      '13.0')
+      An error occurred when building editable wheel for gn-kernels.
+      See debugging tips in:
+      https://setuptools.pypa.io/en/latest/userguide/development_mode.html#debugging-tips
+
+
+hint: Build failures usually indicate a problem with the package or the build environment
