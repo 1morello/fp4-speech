@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+orpheus/out/
+*.wav
+*.safetensors
+*.bin
+*.pt
+orpheus-3b-NVFP4/
