@@ -1,0 +1,3 @@
+date,gpu,power_limit_w,clocks_locked,model,precision,task,dataset,batch,metric,value,notes
+2026-06-12,0,300,no,none,none,idle,none,0,power_draw_w,13.7,идл на глаз; чужой контекст 2.4ГБ в памяти; перемерить скриптом в день 4
+2026-06-12,1,300,no,none,none,idle,none,0,power_draw_w,11.4,идл на глаз; чужой контекст 2.4ГБ в памяти; перемерить скриптом в день 4

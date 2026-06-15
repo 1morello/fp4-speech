@@ -1,0 +1,6 @@
+Resolved 1 package in 583ms
+Downloading torchcodec (2.8MiB)
+ Downloaded torchcodec
+Prepared 1 package in 788ms
+Installed 1 package in 3ms
+ + torchcodec==0.14.0

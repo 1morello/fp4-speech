@@ -1,0 +1,28 @@
+Resolved 84 packages in 456ms
+Uninstalled 6 packages in 35ms
+Installed 19 packages in 20ms
+ + accelerate==1.13.0
+ + auto-round==0.12.3
+ - compressed-tensors==0.15.0.1
+ + compressed-tensors==0.16.0
+ + datasets==4.8.5
+ + evaluate==0.4.6
+ - fsspec==2026.4.0
+ + fsspec==2026.2.0
+ - huggingface-hub==1.19.0
+ + huggingface-hub==0.36.2
+ + jiwer==4.0.0
+ + llmcompressor==0.11.0
+ + multiprocess==0.70.19
+ - nvidia-ml-py==13.610.43
+ + nvidia-ml-py==13.595.45
+ + pandas==3.0.3
+ + pyarrow==24.0.0
+ + python-dateutil==2.9.0.post0
+ + rapidfuzz==3.14.5
+ + soundfile==0.14.0
+ - tqdm==4.68.2
+ + tqdm==4.67.3
+ - transformers==5.11.0
+ + transformers==4.57.6
+ + xxhash==3.7.0
