@@ -1,0 +1,72 @@
+Support for Transformers v4 is deprecated. The Transformers v4 codepath will become unmaintained in vLLM v0.22.0 and will be removed in vLLM v0.24.0. Please upgrade to Transformers v5: pip install --upgrade transformers
+Unknown vLLM environment variable detected: VLLM_MAX_MODEL_LEN
+Unknown vLLM environment variable detected: VLLM_USE_V1
+Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+Support for Transformers v4 is deprecated. The Transformers v4 codepath will become unmaintained in vLLM v0.22.0 and will be removed in vLLM v0.24.0. Please upgrade to Transformers v5: pip install --upgrade transformers
+Failed to get device capability: SM 12.x requires CUDA >= 12.9.
+Failed to get device capability: SM 12.x requires CUDA >= 12.9.
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:00,  3.32it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00<00:00,  3.28it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:00<00:00,  3.94it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00<00:00,  4.98it/s]
+
+2026-06-16 12:24:03,826 - INFO - autotuner.py:615 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+2026-06-16 12:24:03,879 - INFO - autotuner.py:634 - flashinfer.jit: [Autotuner]: Autotuning process ends
+Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+
+--- Phrase 0: The quick brown fox jumps over the lazy dog....
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 144.95it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Triton kernel JIT compilation during inference: _compute_slot_mapping_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+Processed prompts: 100%|██████████| 1/1 [00:04<00:00,  4.25s/it, est. speed input: 3.76 toks/s, output: 156.82 toks/s]Processed prompts: 100%|██████████| 1/1 [00:04<00:00,  4.25s/it, est. speed input: 3.76 toks/s, output: 156.82 toks/s]Processed prompts: 100%|██████████| 1/1 [00:04<00:00,  4.25s/it, est. speed input: 3.76 toks/s, output: 156.82 toks/s]
+    tokens=641  time=4.26s  tok/s=150.4  audio=7.51s  RTF=0.567
+
+--- Phrase 1: Speech synthesis in four bit precision is somethin...
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 1644.83it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:04<00:00,  4.36s/it, est. speed input: 4.36 toks/s, output: 162.57 toks/s]Processed prompts: 100%|██████████| 1/1 [00:04<00:00,  4.36s/it, est. speed input: 4.36 toks/s, output: 162.57 toks/s]Processed prompts: 100%|██████████| 1/1 [00:04<00:00,  4.36s/it, est. speed input: 4.36 toks/s, output: 162.57 toks/s]
+    tokens=683  time=4.36s  tok/s=156.6  audio=8.02s  RTF=0.544
+
+--- Phrase 2: Mr. Quilter is the apostle of the middle classes....
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 1579.78it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:03<00:00,  3.16s/it, est. speed input: 6.01 toks/s, output: 163.11 toks/s]Processed prompts: 100%|██████████| 1/1 [00:03<00:00,  3.16s/it, est. speed input: 6.01 toks/s, output: 163.11 toks/s]Processed prompts: 100%|██████████| 1/1 [00:03<00:00,  3.16s/it, est. speed input: 6.01 toks/s, output: 163.11 toks/s]
+    tokens=473  time=3.16s  tok/s=149.5  audio=5.46s  RTF=0.580
+
+--- Phrase 3: Experience proves this beyond any doubt....
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 1384.72it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.41s/it, est. speed input: 5.40 toks/s, output: 163.61 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.41s/it, est. speed input: 5.40 toks/s, output: 163.61 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.41s/it, est. speed input: 5.40 toks/s, output: 163.61 toks/s]
+    tokens=354  time=2.41s  tok/s=146.9  audio=4.01s  RTF=0.601
+
+--- Phrase 4: How much wood would a woodchuck chuck?...
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 1870.79it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:04<00:00,  4.65s/it, est. speed input: 3.44 toks/s, output: 162.53 toks/s]Processed prompts: 100%|██████████| 1/1 [00:04<00:00,  4.65s/it, est. speed input: 3.44 toks/s, output: 162.53 toks/s]Processed prompts: 100%|██████████| 1/1 [00:04<00:00,  4.65s/it, est. speed input: 3.44 toks/s, output: 162.53 toks/s]
+    tokens=739  time=4.65s  tok/s=158.8  audio=8.70s  RTF=0.535
+
+--- Phrase 5: The future of artificial intelligence depends on e...
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 1644.83it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it, est. speed input: 6.04 toks/s, output: 163.50 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it, est. speed input: 6.04 toks/s, output: 163.50 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it, est. speed input: 6.04 toks/s, output: 163.50 toks/s]
+    tokens=405  time=2.65s  tok/s=152.9  audio=4.52s  RTF=0.586
+
+--- Phrase 6: Pack my box with five dozen liquor jugs....
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 1685.81it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.21s/it, est. speed input: 7.24 toks/s, output: 163.85 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.21s/it, est. speed input: 7.24 toks/s, output: 163.85 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.21s/it, est. speed input: 7.24 toks/s, output: 163.85 toks/s]
+    tokens=342  time=2.21s  tok/s=154.7  audio=3.75s  RTF=0.589
+
+--- Phrase 7: Neural networks can learn to speak with remarkable...
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 2289.47it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.98s/it, est. speed input: 5.71 toks/s, output: 163.28 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.98s/it, est. speed input: 5.71 toks/s, output: 163.28 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.98s/it, est. speed input: 5.71 toks/s, output: 163.28 toks/s]
+    tokens=430  time=2.98s  tok/s=144.4  audio=4.95s  RTF=0.602
+
+--- Phrase 8: Every great experiment begins with a simple questi...
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 1546.57it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:03<00:00,  3.84s/it, est. speed input: 3.90 toks/s, output: 162.86 toks/s]Processed prompts: 100%|██████████| 1/1 [00:03<00:00,  3.84s/it, est. speed input: 3.90 toks/s, output: 162.86 toks/s]Processed prompts: 100%|██████████| 1/1 [00:03<00:00,  3.84s/it, est. speed input: 3.90 toks/s, output: 162.86 toks/s]
+    tokens=549  time=3.84s  tok/s=142.8  audio=6.40s  RTF=0.601
+
+--- Phrase 9: Low precision inference saves both energy and mone...
+Rendering prompts:   0%|          | 0/1 [00:00<?, ?it/s]Rendering prompts: 100%|██████████| 1/1 [00:00<00:00, 1602.10it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.74s/it, est. speed input: 5.48 toks/s, output: 163.37 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.74s/it, est. speed input: 5.48 toks/s, output: 163.37 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.74s/it, est. speed input: 5.48 toks/s, output: 163.37 toks/s]
+    tokens=426  time=2.74s  tok/s=155.6  audio=4.78s  RTF=0.573
+
+Done!

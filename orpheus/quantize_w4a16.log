@@ -1,0 +1,15 @@
+2026-06-16T16:47:25.1954 | __init__ | WARNING - Disabling tokenizer parallelism due to threading conflict between FastTokenizer and Datasets. Set TOKENIZERS_PARALLELISM=false to suppress this warning.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 575.23it/s]
+Tokenizing:   0%|          | 0/10 [00:00<?, ? examples/s]Tokenizing: 100%|██████████| 10/10 [00:00<00:00, 685.40 examples/s]
+2026-06-16T16:47:29.0799 | reset | INFO - Compression lifecycle reset
+2026-06-16T16:47:29.0810 | from_modifiers | INFO - Creating recipe from modifiers
+2026-06-16T16:47:29.1023 | initialize | INFO - Compression lifecycle initialized for 1 modifiers
+2026-06-16T16:47:29.1024 | IndependentPipeline | INFO - Inferred `DataFreePipeline` for `QuantizationModifier`
+2026-06-16T16:47:29.9618 | finalize | INFO - Compression lifecycle finalized for 1 modifiers
+Compressing model:   0%|          | 0/196 [00:00<?, ?it/s]Compressing model:  86%|████████▌ | 168/196 [00:00<00:00, 1670.63it/s]Compressing model: 100%|██████████| 196/196 [00:00<00:00, 1715.30it/s]
+/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/transformers/modeling_utils.py:3970: UserWarning: Attempting to save a model with offloaded modules. Ensure that unallocated cpu memory exceeds the `shard_size` (5GB default)
+  warnings.warn(
+Saving checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Saving checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.38s/it]Saving checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.10s/it]Saving checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.14s/it]
+Dispatching model:   0%|          | 0/371 [00:00<?, ?it/s]Dispatching model: 100%|██████████| 371/371 [00:00<00:00, 74779.51it/s]
+
+Done! Saved to orpheus-3b-W4A16/
