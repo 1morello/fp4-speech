@@ -56,5 +56,10 @@
 8. **orpheus_tts API**: модуль = orpheus_tts (не orpheus_speech), класс = OrpheusModel, generate_speech возвращает PCM int16 bytes chunks
 EOF
 
-git add -A && git commit -m "docs(log): days 0-3 findings, sm120 ecosystem issues"
+
+- Субъективное наблюдение: W4A16 аудио звучит чище BF16 (~70% меньше артефактов).
+  Гипотезы: (1) стохастичность генерации; (2) квантизационный шум как регуляризатор.
+  TODO день 4: объективная проверка через WER (Whisper) + UTMOS.
+  Если подтвердится — потенциальная находка для статьи (quant-as-regularizer для TTS).
+
 

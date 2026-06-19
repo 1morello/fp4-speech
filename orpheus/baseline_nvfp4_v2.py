@@ -7,18 +7,18 @@ from vllm import LLM, SamplingParams
 from orpheus_tts import tokens_decoder_sync
 
 def main():
-    os.makedirs("orpheus/out/nvfp4", exist_ok=True)
+    os.makedirs("orpheus/out/nvfp4_v2", exist_ok=True)
 
     llm = LLM(
         model="orpheus-3b-NVFP4",
         dtype="bfloat16",
         max_model_len=4096,
-        enforce_eager=True,
+        # enforce_eager убран — CUDA graphs включены
     )
 
     sp = SamplingParams(
-        temperature=0.4, top_p=0.8, max_tokens=1200,
-        stop_token_ids=[49158], repetition_penalty=1.3,
+        temperature=0.6, top_p=0.9, max_tokens=1200,
+        stop_token_ids=[49158], repetition_penalty=1.1,
     )
 
     phrases = [
@@ -58,7 +58,7 @@ def main():
             print(f"    EMPTY AUDIO — tokens={len(token_strings)} time={elapsed:.2f}s")
             continue
 
-        sf.write(f"orpheus/out/nvfp4/phrase_{i:02d}.wav", audio_np, 24000)
+        sf.write(f"orpheus/out/nvfp4_v2/phrase_{i:02d}.wav", audio_np, 24000)
 
         duration = len(audio_np) / 24000
         toks = len(token_strings)
