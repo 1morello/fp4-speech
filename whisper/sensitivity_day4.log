@@ -1,0 +1,16 @@
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Loading data...
+Dataset: 73 samples (using 50)
+
+Component               Layers      WER
+----------------------------------------
+baseline BF16                0    0.0%
+encoder ALL                193    0.0%
+decoder ALL                322    0.0%
+enc self_attn              128    0.0%
+enc fc (MLP)                64    0.0%
+dec self_attn              128    0.0%
+dec encoder_attn           128    0.0%
+ALL model                  515    0.0%
+
+Done!
