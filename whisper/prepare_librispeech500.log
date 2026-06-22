@@ -1,0 +1,10 @@
+Full test-clean: 2620 samples
+  [0] 3.5s | raw: CONCORD RETURNED TO ITS PLACE AMIDST THE TENTS
+       norm: concord returned to its place amidst the tents
+  [100] 3.9s | raw: THE DELAWARES ARE CHILDREN OF THE TORTOISE AND THEY OUTSTRIP
+       norm: the delawares are children of the tortoise and they outstrip
+  [499] 15.3s | raw: IN THE SUPPOSED DEPTHS OF THIS DIALOGUE THE NEO PLATONISTS F
+       norm: in the supposed depths of this dialogue the neo platonists f
+Saving the dataset (0/1 shards):   0%|          | 0/500 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 500/500 [00:00<00:00, 7373.72 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 500/500 [00:00<00:00, 7358.45 examples/s]
+
+Saved 500 samples to results/librispeech500/

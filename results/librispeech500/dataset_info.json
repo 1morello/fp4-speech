@@ -1,0 +1,134 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "clean",
+  "dataset_name": "librispeech_asr",
+  "dataset_size": 31262572721,
+  "description": "",
+  "download_size": 30346322580,
+  "features": {
+    "file": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "audio": {
+      "sampling_rate": 16000,
+      "_type": "Audio"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "speaker_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "chapter_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 61608895301,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 368036005,
+      "num_examples": 2620,
+      "dataset_name": "librispeech_asr"
+    },
+    "train.100": {
+      "name": "train.100",
+      "num_bytes": 6623284135,
+      "num_examples": 28539,
+      "shard_lengths": [
+        2139,
+        2139,
+        2139,
+        2139,
+        2139,
+        2239,
+        2239,
+        2238,
+        2138,
+        2338,
+        2238,
+        2238,
+        2176
+      ],
+      "dataset_name": "librispeech_asr"
+    },
+    "train.360": {
+      "name": "train.360",
+      "num_bytes": 23911339288,
+      "num_examples": 104014,
+      "shard_lengths": [
+        2267,
+        2167,
+        2167,
+        2267,
+        2367,
+        2167,
+        2267,
+        2267,
+        2267,
+        2267,
+        2267,
+        2367,
+        2267,
+        2167,
+        2367,
+        2267,
+        2267,
+        2267,
+        2367,
+        2167,
+        2167,
+        2167,
+        2267,
+        2334,
+        2267,
+        2267,
+        2167,
+        2267,
+        2267,
+        2167,
+        2267,
+        2167,
+        2267,
+        2167,
+        2167,
+        2267,
+        2167,
+        2167,
+        2167,
+        2167,
+        2267,
+        2167,
+        2167,
+        2067,
+        2167,
+        2166,
+        1466
+      ],
+      "dataset_name": "librispeech_asr"
+    },
+    "validation": {
+      "name": "validation",
+      "num_bytes": 359913293,
+      "num_examples": 2703,
+      "dataset_name": "librispeech_asr"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

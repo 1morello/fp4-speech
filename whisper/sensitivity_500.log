@@ -1,0 +1,56 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Loaded 500 samples
+
+Component               Layers      WER
+----------------------------------------
+    ...0/500
+    ...100/500
+    ...200/500
+    ...300/500
+    ...400/500
+baseline BF16                0   3.37%
+    ...0/500
+    ...100/500
+    ...200/500
+    ...300/500
+    ...400/500
+encoder ALL                193   3.21%
+    ...0/500
+    ...100/500
+    ...200/500
+    ...300/500
+    ...400/500
+decoder ALL                322   3.28%
+    ...0/500
+    ...100/500
+    ...200/500
+    ...300/500
+    ...400/500
+enc self_attn              128   3.40%
+    ...0/500
+    ...100/500
+    ...200/500
+    ...300/500
+    ...400/500
+enc MLP                     64   3.39%
+    ...0/500
+    ...100/500
+    ...200/500
+    ...300/500
+    ...400/500
+dec self_attn              128   3.37%
+    ...0/500
+    ...100/500
+    ...200/500
+    ...300/500
+    ...400/500
+dec cross_attn             128   3.36%
+    ...0/500
+    ...100/500
+    ...200/500
+    ...300/500
+    ...400/500
+ALL weights                515   3.36%
+
+Done!
