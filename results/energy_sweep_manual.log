@@ -1,0 +1,4 @@
+PL=250  tok/s=316.1  avg_W=231.3  tok/J=1.367  audio/J=0.01589
+PL=275  tok/s=316.8  avg_W=240.4  tok/J=1.318  audio/J=0.01533
+PL=300  tok/s=317.7  avg_W=245.8  tok/J=1.292  audio/J=0.01503
+PL=325  tok/s=318.1  avg_W=257.0  tok/J=1.238  audio/J=0.01439
