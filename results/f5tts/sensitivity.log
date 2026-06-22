@@ -1,0 +1,693 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Device set to use cuda
+Component             NFE  Layers      WER      RTF
+----------------------------------------------------
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.43it/s]100%|██████████| 1/1 [00:00<00:00,  1.43it/s]
+`return_token_timestamps` is deprecated for WhisperFeatureExtractor and will be removed in Transformers v5. Use `return_attention_mask` instead, as the number of frames can be inferred from it.
+Using custom `forced_decoder_ids` from the (generation) config. This is deprecated in favor of the `task` and `language` flags/config options.
+Transcription using a multilingual Whisper will default to language detection followed by transcription instead of translation to English. This might be a breaking change for your use case. If you want to instead always translate your audio to English, make sure to pass `language='en'`. See https://github.com/huggingface/transformers/pull/28687 for more details.
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.34it/s]100%|██████████| 1/1 [00:00<00:00,  2.34it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.56it/s]100%|██████████| 1/1 [00:00<00:00,  2.56it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.61it/s]100%|██████████| 1/1 [00:00<00:00,  2.61it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+baseline               32       0    4.7%   0.091
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.55it/s]100%|██████████| 1/1 [00:00<00:00,  2.55it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.38it/s]100%|██████████| 1/1 [00:00<00:00,  2.38it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.59it/s]100%|██████████| 1/1 [00:00<00:00,  2.59it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.58it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.60it/s]100%|██████████| 1/1 [00:00<00:00,  2.60it/s]
+DiT attention          32      88    4.7%   0.091
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.59it/s]100%|██████████| 1/1 [00:00<00:00,  2.59it/s]
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.38it/s]100%|██████████| 1/1 [00:00<00:00,  2.37it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.59it/s]100%|██████████| 1/1 [00:00<00:00,  2.59it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.60it/s]100%|██████████| 1/1 [00:00<00:00,  2.60it/s]
+DiT MLP (ff)           32      44    4.7%   0.090
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.56it/s]100%|██████████| 1/1 [00:00<00:00,  2.56it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.37it/s]100%|██████████| 1/1 [00:00<00:00,  2.37it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.58it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+DiT ALL                32     154    4.7%   0.089
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.55it/s]100%|██████████| 1/1 [00:00<00:00,  2.55it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.32it/s]100%|██████████| 1/1 [00:00<00:00,  2.32it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.53it/s]100%|██████████| 1/1 [00:00<00:00,  2.53it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.58it/s]100%|██████████| 1/1 [00:00<00:00,  2.58it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.59it/s]100%|██████████| 1/1 [00:00<00:00,  2.59it/s]
+text_embed             32       9    4.7%   0.090
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.33it/s]100%|██████████| 1/1 [00:00<00:00,  2.33it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.56it/s]100%|██████████| 1/1 [00:00<00:00,  2.56it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.60it/s]100%|██████████| 1/1 [00:00<00:00,  2.60it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+ALL model              32     167    4.7%   0.089
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.16it/s]100%|██████████| 1/1 [00:00<00:00,  4.16it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.00it/s]100%|██████████| 1/1 [00:00<00:00,  3.99it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.21it/s]100%|██████████| 1/1 [00:00<00:00,  4.20it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.25it/s]100%|██████████| 1/1 [00:00<00:00,  4.25it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.29it/s]100%|██████████| 1/1 [00:00<00:00,  4.28it/s]
+baseline               16       0    4.7%   0.055
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.27it/s]100%|██████████| 1/1 [00:00<00:00,  4.26it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  3.92it/s]100%|██████████| 1/1 [00:00<00:00,  3.91it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.24it/s]100%|██████████| 1/1 [00:00<00:00,  4.24it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.22it/s]100%|██████████| 1/1 [00:00<00:00,  4.22it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.21it/s]100%|██████████| 1/1 [00:00<00:00,  4.21it/s]
+DiT attention          16      88    4.7%   0.055
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.17it/s]100%|██████████| 1/1 [00:00<00:00,  4.17it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  3.94it/s]100%|██████████| 1/1 [00:00<00:00,  3.94it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.19it/s]100%|██████████| 1/1 [00:00<00:00,  4.18it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.34it/s]100%|██████████| 1/1 [00:00<00:00,  4.33it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.20it/s]100%|██████████| 1/1 [00:00<00:00,  4.20it/s]
+DiT MLP (ff)           16      44    4.7%   0.055
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.15it/s]100%|██████████| 1/1 [00:00<00:00,  4.15it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  3.82it/s]100%|██████████| 1/1 [00:00<00:00,  3.82it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.08it/s]100%|██████████| 1/1 [00:00<00:00,  4.08it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.07it/s]100%|██████████| 1/1 [00:00<00:00,  4.07it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.18it/s]100%|██████████| 1/1 [00:00<00:00,  4.17it/s]
+DiT ALL                16     154    4.7%   0.056
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.03it/s]100%|██████████| 1/1 [00:00<00:00,  4.02it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  3.76it/s]100%|██████████| 1/1 [00:00<00:00,  3.76it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.07it/s]100%|██████████| 1/1 [00:00<00:00,  4.06it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.06it/s]100%|██████████| 1/1 [00:00<00:00,  4.06it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.13it/s]100%|██████████| 1/1 [00:00<00:00,  4.13it/s]
+text_embed             16       9    4.7%   0.057
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  /home/arnur/.cache/huggingface/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 The quick brown fox jumps over the lazy dog.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.06it/s]100%|██████████| 1/1 [00:00<00:00,  4.06it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Speech synthesis in four bit precision is something nobody has tried before.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  3.87it/s]100%|██████████| 1/1 [00:00<00:00,  3.87it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Mr. Quilter is the apostle of the middle classes.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.09it/s]100%|██████████| 1/1 [00:00<00:00,  4.09it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 Experience proves this beyond any doubt.
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.10it/s]100%|██████████| 1/1 [00:00<00:00,  4.09it/s]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 How much wood would a woodchuck chuck?
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  4.20it/s]100%|██████████| 1/1 [00:00<00:00,  4.20it/s]
+ALL model              16     167    4.7%   0.056
+
+Done!
