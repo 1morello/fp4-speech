@@ -1,0 +1,22 @@
+2026-06-30T16:52:36.7776 | __init__ | WARNING - Disabling tokenizer parallelism due to threading conflict between FastTokenizer and Datasets. Set TOKENIZERS_PARALLELISM=false to suppress this warning.
+2026-06-30T16:52:40.9063 | _make_sampler | WARNING - Requested 10 samples but the provided dataset only has 0 samples.
+Traceback (most recent call last):
+  File "/home/arnur/fp4-speech/whisper/quantize_nvfp4.py", line 28, in <module>
+    oneshot(
+  File "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/llmcompressor/entrypoints/oneshot.py", line 412, in oneshot
+    one_shot()
+  File "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/llmcompressor/entrypoints/oneshot.py", line 186, in __call__
+    calibration_dataloader = get_calibration_dataloader(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/llmcompressor/datasets/utils.py", line 130, in get_calibration_dataloader
+    return format_calibration_data(dataset_args, calibration_dataset, processor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/llmcompressor/datasets/utils.py", line 150, in format_calibration_data
+    sampler=_make_sampler(args, tokenized_dataset),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/llmcompressor/datasets/utils.py", line 306, in _make_sampler
+    return RandomSampler(dataset, num_samples=num_samples)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arnur/fp4-speech/.venv/lib/python3.12/site-packages/torch/utils/data/sampler.py", line 149, in __init__
+    raise ValueError(
+ValueError: num_samples should be a positive integer value, but got num_samples=0
