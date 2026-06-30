@@ -1,0 +1,14 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  7.28it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  7.31it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 10.62it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  9.72it/s]
+Baseline top1: 128260
+
+Group                 Logit MSE   Top1 match    Act max
+-------------------------------------------------------
+layers 0-3                 0.04          YES     3616.0
+layers 4-7                 0.04          YES     3616.0
+layers 8-11                0.27          YES     3616.0
+layers 12-15               1.23          YES     3616.0
+layers 16-19               0.87          YES     3616.0
+layers 20-27               0.44          YES     3616.0
+ALL layers                 0.57           NO     3616.0
+
+Done!
