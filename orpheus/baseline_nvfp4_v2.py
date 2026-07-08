@@ -46,7 +46,7 @@ def main():
             audio_chunks = list(tokens_decoder_sync(iter(token_strings)))
             raw = b"".join(audio_chunks)
             audio_np = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768.0
-        except:
+        except Exception:
             audio_np = np.array([])
 
         if len(audio_np) == 0:
@@ -59,7 +59,7 @@ def main():
         print(f"    tokens={toks}  time={elapsed:.2f}s  tok/s={toks/elapsed:.1f}  audio={duration:.2f}s  RTF={elapsed/duration:.3f}")
         success += 1
 
-    print(f"\nSuccess: {success}/10")
+    print(f"\nSuccess: {success}/{len(phrases)}")
 
 if __name__ == "__main__":
     main()

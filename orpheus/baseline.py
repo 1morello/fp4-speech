@@ -43,7 +43,7 @@ def main():
         full_text = output.outputs[0].text
         elapsed = time.time() - t0
 
-        # split into individual token strings for the SNAC decoder
+        # SNAC-декодеру нужны отдельные токен-строки
         token_strings = re.findall(r'<custom_token_\d+>', full_text)
         audio_chunks = list(tokens_decoder_sync(iter(token_strings)))
         raw = b"".join(audio_chunks)
@@ -54,8 +54,6 @@ def main():
         duration = len(audio_np) / 24000
         toks = len(token_strings)
         print(f"    tokens={toks}  time={elapsed:.2f}s  tok/s={toks/elapsed:.1f}  audio={duration:.2f}s  RTF={elapsed/duration:.3f}")
-
-    print("\nDone!")
 
 if __name__ == "__main__":
     main()

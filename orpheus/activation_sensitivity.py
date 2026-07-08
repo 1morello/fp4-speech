@@ -79,7 +79,5 @@ def main():
 
         print(f"{group_name:<18} {mse:>12.2f} {'YES' if top1_match else 'NO':>12} {max_act:>10.1f}")
 
-    print("\nDone!")
-
 if __name__ == "__main__":
     main()

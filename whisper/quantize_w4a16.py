@@ -1,4 +1,3 @@
-"""Quantize Whisper large-v3 to W4A16 — no calibration needed."""
 from datasets import Dataset
 from llmcompressor import oneshot
 from llmcompressor.modifiers.quantization import QuantizationModifier
@@ -21,4 +20,4 @@ oneshot(
     num_calibration_samples=10,
 )
 
-print("\nDone! Saved to whisper-large-v3-W4A16/")
+print("\nwhisper-large-v3-W4A16/ готово")

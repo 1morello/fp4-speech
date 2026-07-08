@@ -48,7 +48,7 @@ class FP4Linear(nn.Module):
         M = x_2d.shape[0]
 
         if M >= 128:
-            # pad M to multiple of 128
+            # cuBLAS fp4 не берёт M<128, паддим до кратности 128
             M_padded = (M + 127) // 128 * 128
             if M_padded != M:
                 x_padded = torch.zeros(M_padded, self.in_features, device=x_2d.device, dtype=x_2d.dtype)
@@ -62,7 +62,7 @@ class FP4Linear(nn.Module):
                 x_scales, self.w_scales,
                 out_dtype=torch.float16,
             )
-            out = out[:M]  # unpad
+            out = out[:M]
         else:
             w = self._dequant_weights().to(orig_dtype)
             out = x_2d @ w.t()
@@ -70,6 +70,7 @@ class FP4Linear(nn.Module):
         if self.bias is not None:
             out = out.to(orig_dtype) + self.bias
         return out.to(orig_dtype).reshape(*orig_shape[:-1], self.out_features)
+
     def _dequant_weights(self):
         if not hasattr(self, '_w_cache'):
             w_bytes = self.w_packed.view(torch.uint8).reshape(-1)
@@ -130,7 +131,7 @@ def main():
             elapsed = time.time() - t0
             print(f"    FAILED ({elapsed:.2f}s): {e}")
 
-    print("\nDone!")
+    print("\nwavs в results/f5tts/fp4_w4a4/")
 
 if __name__ == "__main__":
     main()

@@ -4,6 +4,13 @@ os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
 import numpy as np
 from vllm import LLM, SamplingParams
 
+def get_power_limit(gpu_id):
+    out = subprocess.run(
+        ["nvidia-smi", "-i", str(gpu_id), "--query-gpu=power.limit", "--format=csv,noheader,nounits"],
+        capture_output=True, text=True
+    )
+    return float(out.stdout.strip())
+
 def power_logger(stop_event, readings, gpu_id=0, interval=0.1):
     while not stop_event.is_set():
         out = subprocess.run(
@@ -73,15 +80,20 @@ def main():
     print("-" * 42)
 
     for pl in power_limits:
-        subprocess.run(["sudo", "nvidia-smi", "-i", str(gpu_id), "-pl", str(pl)], capture_output=True)
+        # sudo -n чтобы не висеть на пароле; отказ ловим сверкой фактического лимита
+        subprocess.run(["sudo", "-n", "nvidia-smi", "-i", str(gpu_id), "-pl", str(pl)], capture_output=True)
+        actual = get_power_limit(gpu_id)
+        if abs(actual - pl) > 1:
+            print(f"{pl:>5}  -pl не применился (стоит {actual:.0f}W) — пропускаю, нужен админ")
+            continue
         time.sleep(2)  # стабилизация
 
         r = run_benchmark(llm, sp, phrases, gpu_id)
         print(f"{pl:>5} {r['tok_s']:>7.1f} {r['avg_power']:>7.1f} {r['tok_j']:>7.3f} {r['audio_per_j']:>9.5f}")
 
     # вернуть дефолт
-    subprocess.run(["sudo", "nvidia-smi", "-i", str(gpu_id), "-pl", "300"], capture_output=True)
-    print("\nPower limit restored to 300W. Done!")
+    subprocess.run(["sudo", "-n", "nvidia-smi", "-i", str(gpu_id), "-pl", "300"], capture_output=True)
+    print("\nPL вернул на 300W")
 
 if __name__ == "__main__":
     main()

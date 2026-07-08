@@ -54,7 +54,5 @@ def main():
         toks = len(token_strings)
         print(f"    tokens={toks}  time={elapsed:.2f}s  tok/s={toks/elapsed:.1f}  audio={duration:.2f}s  RTF={elapsed/duration:.3f}")
 
-    print("\nDone!")
-
 if __name__ == "__main__":
     main()

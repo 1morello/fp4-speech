@@ -35,4 +35,4 @@ oneshot(
     num_calibration_samples=len(calib_texts),
 )
 
-print("\nDone! Quantized model saved to orpheus-3b-NVFP4/")
+print("\nsaved to orpheus-3b-NVFP4/")

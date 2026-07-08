@@ -41,7 +41,5 @@ def main():
         duration = len(wav) / sr
         print(f"    time={elapsed:.2f}s  audio={duration:.2f}s  RTF={elapsed/duration:.3f}  nfe=32")
 
-    print("\nDone!")
-
 if __name__ == "__main__":
     main()

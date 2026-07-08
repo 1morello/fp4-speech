@@ -32,4 +32,4 @@ oneshot(
     num_calibration_samples=len(calib_texts),
 )
 
-print("\nDone! Saved to orpheus-3b-W4A16/")
+print("\nsaved to orpheus-3b-W4A16/")

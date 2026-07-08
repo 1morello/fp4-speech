@@ -12,13 +12,13 @@ def power_logger(stop_event, readings, gpu_id=0, interval=0.1):
         )
         try:
             readings.append(float(out.stdout.strip()))
-        except:
+        except ValueError:
             pass
         time.sleep(interval)
 
 def main():
     gpu_id = int(os.environ.get("CUDA_VISIBLE_DEVICES", "0"))
-    pl = int(sys.argv[1]) if len(sys.argv) > 1 else 300
+    pl = int(sys.argv[1]) if len(sys.argv) > 1 else 300  # метка для лога, сам -pl ставит админ руками
 
     llm = LLM(model="orpheus-3b-NVFP4", dtype="bfloat16", max_model_len=4096)
     sp = SamplingParams(temperature=0.6, top_p=0.9, max_tokens=1200,

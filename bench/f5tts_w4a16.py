@@ -102,7 +102,7 @@ def main():
             elapsed = time.time() - t0
             print(f"    FAILED ({elapsed:.2f}s): {e}")
 
-    print("\nDone!")
+    print("\nwavs в results/f5tts/fp4_w4a16/")
 
 if __name__ == "__main__":
     main()

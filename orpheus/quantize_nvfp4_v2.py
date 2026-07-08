@@ -2,8 +2,8 @@ from datasets import Dataset
 from llmcompressor import oneshot
 from llmcompressor.modifiers.quantization import QuantizationModifier
 
-# 50 промптов вместо 10 — больше фонетического разнообразия
-calib_texts = [f"<custom_token_3>tara<custom_token_4>{t}<custom_token_5>" for t in [
+# 10 своих фраз + harvard sentences (списки 1-4, фонетически сбалансированы) = 50
+project_phrases = [
     "The quick brown fox jumps over the lazy dog.",
     "Speech synthesis in four bit precision is something nobody has tried before.",
     "Mr. Quilter is the apostle of the middle classes.",
@@ -14,47 +14,53 @@ calib_texts = [f"<custom_token_3>tara<custom_token_4>{t}<custom_token_5>" for t 
     "Neural networks can learn to speak with remarkable clarity.",
     "Every great experiment begins with a simple question.",
     "Low precision inference saves both energy and money.",
-    "A rainbow appeared after the thunderstorm ended.",
-    "The ancient library contained thousands of rare manuscripts.",
-    "She walked along the beach collecting colorful seashells.",
-    "Modern computers can process billions of calculations per second.",
-    "The orchestra performed a magnificent symphony last evening.",
-    "Fresh bread from the bakery smells absolutely wonderful.",
-    "Scientists discovered a new species deep in the ocean.",
-    "The train departed exactly on schedule this morning.",
-    "Children played happily in the park all afternoon.",
-    "Quantum computing will revolutionize cryptography and drug discovery.",
-    "The chef prepared an exquisite five course dinner.",
-    "Heavy snow blanketed the entire city overnight.",
-    "Astronomers observed a distant galaxy through the telescope.",
-    "The marathon runner crossed the finish line triumphantly.",
-    "Renewable energy sources are becoming increasingly affordable.",
-    "The old clock tower has stood for over two centuries.",
-    "Butterflies migrate thousands of miles every autumn season.",
-    "The professor lectured passionately about medieval European history.",
-    "A gentle breeze rustled through the autumn leaves.",
-    "Robots are becoming more capable with each passing year.",
-    "The sunset painted the sky in shades of orange.",
-    "Volcanic eruptions can dramatically alter global weather patterns.",
-    "The pianist played a beautiful nocturne by Chopin.",
-    "Coral reefs support an incredible diversity of marine life.",
-    "The detective carefully examined every piece of evidence.",
-    "Artificial neural networks loosely mimic biological brain structures.",
-    "The farmer harvested a record crop of wheat this year.",
-    "Lightning illuminated the dark sky for a brief moment.",
-    "The museum exhibition attracted visitors from around the world.",
-    "Deep learning has transformed computer vision and natural language processing.",
-    "The river flowed peacefully through the green valley below.",
-    "Smartphone cameras have improved dramatically in recent years.",
-    "The architect designed a stunning glass and steel building.",
-    "Honeybees play a crucial role in pollinating food crops.",
-    "The novel won several prestigious literary awards last year.",
-    "Three dimensional printing enables rapid prototyping of complex parts.",
-    "The northern lights danced across the arctic sky beautifully.",
-    "Electric vehicles are gradually replacing traditional combustion engines.",
-    "The surgeon performed a delicate operation with remarkable precision.",
-    "Climate change poses significant challenges for future generations.",
-]]
+]
+
+harvard = [
+    "The birch canoe slid on the smooth planks.",
+    "Glue the sheet to the dark blue background.",
+    "It's easy to tell the depth of a well.",
+    "These days a chicken leg is a rare dish.",
+    "Rice is often served in round bowls.",
+    "The juice of lemons makes fine punch.",
+    "The box was thrown beside the parked truck.",
+    "The hogs were fed chopped corn and garbage.",
+    "Four hours of steady work faced us.",
+    "A large size in stockings is hard to sell.",
+    "The boy was there when the sun rose.",
+    "A rod is used to catch pink salmon.",
+    "The source of the huge river is the clear spring.",
+    "Kick the ball straight and follow through.",
+    "Help the woman get back to her feet.",
+    "A pot of tea helps to pass the evening.",
+    "Smoky fires lack flame and heat.",
+    "The soft cushion broke the man's fall.",
+    "The salt breeze came across from the sea.",
+    "The girl at the booth sold fifty bonds.",
+    "The small pup gnawed a hole in the sock.",
+    "The fish twisted and turned on the bent hook.",
+    "Press the pants and sew a button on the vest.",
+    "The swan dive was far short of perfect.",
+    "The beauty of the view stunned the young boy.",
+    "Two blue fish swam in the tank.",
+    "Her purse was full of useless trash.",
+    "The colt reared and threw the tall rider.",
+    "It snowed, rained, and hailed the same morning.",
+    "Read verse out loud for pleasure.",
+    "Hoist the load to your left shoulder.",
+    "Take the winding path to reach the lake.",
+    "Note closely the size of the gas tank.",
+    "Wipe the grease off his dirty face.",
+    "Mend the coat before you go out.",
+    "The wrist was badly strained and hung limp.",
+    "The stray cat gave birth to kittens.",
+    "The young girl gave no clear response.",
+    "The meal was cooked before the bell rang.",
+    "What joy there is in living.",
+]
+
+calib_texts = [f"<custom_token_3>tara<custom_token_4>{t}<custom_token_5>"
+               for t in project_phrases + harvard]
 
 dataset = Dataset.from_dict({"text": calib_texts})
 
@@ -70,7 +76,7 @@ oneshot(
     dataset=dataset,
     output_dir="orpheus-3b-NVFP4-v2",
     max_seq_length=512,
-    num_calibration_samples=50,
+    num_calibration_samples=len(calib_texts),
 )
 
-print("\nDone! Saved to orpheus-3b-NVFP4-v2/")
+print("\nготово, orpheus-3b-NVFP4-v2/")

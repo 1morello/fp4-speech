@@ -3,6 +3,7 @@ import numpy as np
 import soundfile as sf
 from f5_tts.api import F5TTS
 from transformers import pipeline
+from jiwer import wer
 
 REF_AUDIO = os.path.expanduser("~/.cache/uv/archive-v0/-F0KBVjvYRZogbcB/f5_tts/infer/examples/basic/basic_ref_en.wav")
 REF_TEXT = "Some call me nature, others call me mother nature."
@@ -38,11 +39,9 @@ phrases = [
     "How much wood would a woodchuck chuck?",
 ]
 
-def evaluate(model, nfe, asr, label):
-    refs = phrases
-    hyps = []
-    rtfs = []
-    for i, text in enumerate(phrases):
+def evaluate(model, nfe, asr):
+    hyps, rtfs = [], []
+    for text in phrases:
         t0 = time.time()
         wav, sr, _ = model.infer(
             ref_file=REF_AUDIO, ref_text=REF_TEXT,
@@ -52,16 +51,13 @@ def evaluate(model, nfe, asr, label):
         duration = len(wav) / sr
         rtfs.append(elapsed / duration)
 
-        # write temp wav for ASR
         sf.write("/tmp/f5_eval.wav", wav, sr)
         result = asr("/tmp/f5_eval.wav")
-        hyp = re.sub(r'[^\w\s]', '', result["text"].strip().lower())
-        ref = re.sub(r'[^\w\s]', '', text.strip().lower())
-        hyps.append(hyp)
+        hyps.append(re.sub(r'[^\w\s]', '', result["text"].strip().lower()))
 
-    from jiwer import wer
-    w = wer([re.sub(r'[^\w\s]', '', t.lower()) for t in refs], hyps)
-    avg_rtf = np.mean(rtfs[1:])  # skip warmup
+    refs = [re.sub(r'[^\w\s]', '', t.strip().lower()) for t in phrases]
+    w = wer(refs, hyps)
+    avg_rtf = np.mean(rtfs[1:])  # первая фраза — прогрев
     return w, avg_rtf
 
 def main():
@@ -86,12 +82,10 @@ def main():
         for comp_name, filt_fn in components:
             model = F5TTS(model="F5TTS_v1_Base")
             count = quantize_component(model, filt_fn)
-            w, rtf = evaluate(model, nfe, asr, comp_name)
+            w, rtf = evaluate(model, nfe, asr)
             print(f"{comp_name:<20} {nfe:>4} {count:>7} {w:>7.1%} {rtf:>7.3f}")
             del model
             torch.cuda.empty_cache()
-
-    print("\nDone!")
 
 if __name__ == "__main__":
     main()
