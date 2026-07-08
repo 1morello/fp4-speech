@@ -64,7 +64,7 @@ def main():
 
     for comp_name, filt_fn in configs:
         model = WhisperForConditionalGeneration.from_pretrained(
-            "openai/whisper-large-v3", torch_dtype=torch.float32
+            "openai/whisper-large-v3", dtype=torch.float32
         ).to("cuda").eval()
 
         count = quantize_linear_weights(model, filt_fn)
@@ -73,8 +73,6 @@ def main():
 
         del model
         torch.cuda.empty_cache()
-
-    print("\nDone!")
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,4 @@
-import torch
-import re
-import copy
+import torch, re
 from datasets import load_dataset
 from transformers import WhisperForConditionalGeneration, WhisperProcessor
 from jiwer import wer
@@ -20,86 +18,61 @@ def nvfp4_fakequant(W):
     dequantized = quantized * scale.unsqueeze(-1)
     return dequantized.reshape(W.shape).to(orig_dtype)
 
-def quantize_component(model, comp_filter):
+def quantize_linear_weights(model, filt_fn):
     count = 0
     for name, param in model.named_parameters():
-        if comp_filter in name and "weight" in name and param.dim() == 2:
-            if param.shape[-1] % 16 == 0:
-                param.data = nvfp4_fakequant(param.data)
-                count += 1
+        if filt_fn(name) and "weight" in name and param.dim() == 2 and param.shape[-1] % 16 == 0:
+            param.data = nvfp4_fakequant(param.data)
+            count += 1
     return count
 
-def evaluate_wer(model, processor, dataset, max_samples=50):
+def normalize(t):
+    return re.sub(r'[^\w\s]', '', t.strip().lower())
+
+def evaluate_wer(model, processor, ds, max_samples=50):
     refs, hyps = [], []
-    for i, sample in enumerate(dataset):
-        if i >= max_samples:
-            break
-        audio = sample["audio"]["array"]
-        sr = sample["audio"]["sampling_rate"]
+    for i in range(min(max_samples, len(ds))):
+        audio = ds[i]["audio"]["array"]
+        sr = ds[i]["audio"]["sampling_rate"]
         inputs = processor(audio, sampling_rate=sr, return_tensors="pt").to("cuda")
         with torch.no_grad():
             ids = model.generate(**inputs, language="en", max_new_tokens=256)
-        text = processor.batch_decode(ids, skip_special_tokens=True)[0].strip()
-        ref_norm = sample["text"].strip().lower()
-    hyp_norm = text.strip().lower()
-    # убираем пунктуацию
-    import re
-    ref_norm = re.sub(r'[^\w\s]', '', ref_norm)
-    hyp_norm = re.sub(r'[^\w\s]', '', hyp_norm)
-    refs.append(ref_norm)
-    hyps.append(hyp_norm)
+        text = processor.batch_decode(ids, skip_special_tokens=True)[0]
+        refs.append(normalize(ds[i]["text"]))
+        hyps.append(normalize(text))
     return wer(refs, hyps)
 
 def main():
     print("Loading data...")
     processor = WhisperProcessor.from_pretrained("openai/whisper-large-v3")
     ds = load_dataset("hf-internal-testing/librispeech_asr_dummy", "clean", split="validation")
+    print(f"Dataset: {len(ds)} samples (using 50)")
 
-    components = [
-        ("baseline BF16",    None),
-        ("encoder ALL",      "model.encoder"),
-        ("decoder ALL",      "model.decoder"),
-        ("enc self_attn",    "encoder.layers"),   # will match self_attn in encoder layers
-        ("enc fc (MLP)",     "encoder.layers"),
-        ("dec self_attn",    "decoder.layers"),
-        ("dec encoder_attn", "encoder_attn"),
-        ("ALL model",        "model"),
+    configs = [
+        ("baseline BF16",    lambda n: False),
+        ("encoder ALL",      lambda n: "model.encoder" in n),
+        ("decoder ALL",      lambda n: "model.decoder" in n),
+        ("enc self_attn",    lambda n: "encoder.layers" in n and "self_attn" in n),
+        ("enc fc (MLP)",     lambda n: "encoder.layers" in n and ("fc1" in n or "fc2" in n)),
+        ("dec self_attn",    lambda n: "decoder.layers" in n and "self_attn" in n),
+        ("dec encoder_attn", lambda n: "decoder.layers" in n and "encoder_attn" in n),
+        ("ALL model",        lambda n: "model" in n),
     ]
 
-    # для enc/dec sub-components нужна точная фильтрация
-    sub_filters = {
-        "enc self_attn":    lambda n: "encoder.layers" in n and "self_attn" in n,
-        "enc fc (MLP)":     lambda n: "encoder.layers" in n and ("fc1" in n or "fc2" in n),
-        "dec self_attn":    lambda n: "decoder.layers" in n and "self_attn" in n,
-        "dec encoder_attn": lambda n: "decoder.layers" in n and "encoder_attn" in n,
-    }
-
-    print(f"Dataset: {len(ds)} samples (using 50)")
     print(f"\n{'Component':<22} {'Layers':>7} {'WER':>8}")
     print("-" * 40)
 
-    for comp_name, comp_filter in components:
+    for comp_name, filt_fn in configs:
         model = WhisperForConditionalGeneration.from_pretrained(
             "openai/whisper-large-v3", dtype=torch.float32
         ).to("cuda").eval()
 
-        count = 0
-        if comp_name in sub_filters:
-            filt = sub_filters[comp_name]
-            for name, param in model.named_parameters():
-                if filt(name) and "weight" in name and param.dim() == 2 and param.shape[-1] % 16 == 0:
-                    param.data = nvfp4_fakequant(param.data)
-                    count += 1
-        elif comp_filter:
-            count = quantize_component(model, comp_filter)
-
+        count = quantize_linear_weights(model, filt_fn)
         w = evaluate_wer(model, processor, ds)
         print(f"{comp_name:<22} {count:>7} {w:>7.1%}")
 
         del model
         torch.cuda.empty_cache()
-
-    print("\nDone!")
 
 if __name__ == "__main__":
     main()
